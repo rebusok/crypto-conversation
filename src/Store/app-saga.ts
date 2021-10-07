@@ -61,8 +61,9 @@ export function* initinalSaga() {
     yield put(setStatusApp(RequestStatusType.LOADING))
     const INIT_CUR = ['USD', 'EUR', 'CHF', 'GBP', 'RUB']
     const initinalTypeCurrency = data.Data?.map(el => {
-        return el.CoinInfo.Internal
+        return el.RAW.USD.FROMSYMBOL
     })
+    console.log(initinalTypeCurrency)
     console.log(data)
     const currentArrayForStore = createCurrentObjectWithTable(data)
     try {
